@@ -1,0 +1,21 @@
+FROM ubuntu18.04-asterisk:16.6.1V03
+MAINTAINER Asongwz 
+
+ENV ASTERISKVERSION 16.6.1
+ENV DEBIAN_FRONTEND noninteractive
+ARG IP=192.168.101.26
+ENV ENV_IP=$IP
+
+
+WORKDIR /etc/asterisk
+RUN sed -i 's/external_media_address=192.168.215.113/external_media_address='${ENV_IP}'/g' /etc/asterisk/pjsip.conf \
+		&&sed -i 's/external_signaling_address=192.168.215.113/external_signaling_address='${ENV_IP}'/g' /etc/asterisk/pjsip.conf 
+
+EXPOSE 5060/udp
+EXPOSE 10000-10050/udp
+
+ENTRYPOINT ["/bin/bash", "/root/startup.sh"]		
+		
+		
+		
+		
