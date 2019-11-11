@@ -22,6 +22,7 @@ $ docker build -t myrepository/asterisk01 .
 [or you can modify externalip by:
 $ docker build --build-arg IP=[yourip] -f Dockerfile_modify_externalIP -t myrepository/asterisk01 .
 ]
+
 To execute it:
 
 Asterisk PBX needs to use a big range of ports, so it needs to be executed with docker version 1.5.0 or higher (available in docker ubuntu sources) for being able to launch the image specifying a range of ports. For example:
