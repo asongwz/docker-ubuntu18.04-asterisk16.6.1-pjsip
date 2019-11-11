@@ -1,4 +1,4 @@
-FROM ubuntu18.04-asterisk:16.6.1V03
+FROM asongwz/ubuntu18.04-asterisk:16.6.1-basic-notrunasterisk
 MAINTAINER Asongwz 
 
 ENV ASTERISKVERSION 16.6.1
